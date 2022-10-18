@@ -25,12 +25,15 @@ let academyMembers = [
 let findAcademyMember = academyMembers.find((actor) => actor.memID == 187);
 console.log(findAcademyMember.name);
 
+console.log('--------------------');
 // Who has have been in at least 3 films?
 let moreThan3 = academyMembers.filter((actor) => actor.films.length >= 3);
 console.log(moreThan3);
+
+console.log('--------------------');
 // Who has a name that starts with "Bob"?
+let findBob = academyMembers.filter((actor) => actor.name.indexOf("Bob") != -1);
+console.log(findBob);
 
 // HARDER: Which Academy Members have been in a film
 // that starts with "A"
-
-
