@@ -15,10 +15,28 @@ let winningTickets = [
 ];
 
 window.onload = () => {
-    loadWinningTicketsTable()
+    loadWinningTicketsTable();
 };
 
 function loadWinningTicketsTable() {
     const winningTicketsTbl = document.getElementById("winningTicketsTbl");
+
+    for (const ticket of winningTickets) {
+        buildTicketRow(winningTicketsTbl, ticket);
+    }
+}
+
+function buildTicketRow(tableBody, ticket) {
+    let row = tableBody.insertRow(-1);
+
+    let cell1 = row.insertCell(0);
+    cell1.innerText = ticket.tixNum;
+
+    let cell2 = row.insertCell(1);
+    cell2.innerText = ticket.prize;
+
+    let cell3 = row.insertCell(2);
+    cell3.innerText = ticket.expires;
+
 
 }
