@@ -4,11 +4,10 @@ let imageFiles = [
     { path: "https://via.placeholder.com/250/machine?lock=3", name: "Machines" },
 ];
 
-
+let imagesList = document.getElementById('imagesList');
+let imagesDiv = document.querySelector("#imagesDiv");
 
 function loadimagesList() {
-    let imagesList = document.getElementById('imagesList');
-
     imageFiles.forEach((imageFile) => {
         let option = new Option(imageFile.name, imageFile.name);
         imagesList.appendChild(option)
@@ -17,21 +16,25 @@ function loadimagesList() {
 
 function addImage() {
     let selectedValue = imagesList.value;
-
     let imageFile = imageFiles.find((imageFile) => imageFile.name === selectedValue);
 
     let img = document.createElement("img");
     img.src = imageFile.path;
     img.alt = imageFile.name;
 
-    const imagesDiv = document.querySelector("#imagesDiv");
     imagesDiv.appendChild(img);
+}
 
-
+function clearImage() {
+    imagesDiv.innerHTML = "";
 }
 
 window.onload = () => {
     loadimagesList();
+
     let addBtn = document.querySelector("#addBtn");
+    let clearBtn = document.querySelector("#clearBtn");
+
     addBtn.onclick = addImage;
+    clearBtn.onclick = clearImage;
 }
