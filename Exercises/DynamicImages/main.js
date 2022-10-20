@@ -16,12 +16,18 @@ function loadimagesList() {
 }
 
 function addImage() {
-
-
     let selectedValue = imagesList.value;
 
-    let imageFile = imageFiles.find((imageFile) => imageFile.name == selectedValue);
-    console.log(imageFile.path);
+    let imageFile = imageFiles.find((imageFile) => imageFile.name === selectedValue);
+
+    let img = document.createElement("img");
+    img.src = imageFile.path;
+    img.alt = imageFile.name;
+
+    const imagesDiv = document.querySelector("#imagesDiv");
+    imagesDiv.appendChild(img);
+
+
 }
 
 window.onload = () => {
