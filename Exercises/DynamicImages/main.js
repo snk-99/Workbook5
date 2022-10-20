@@ -26,7 +26,8 @@ function addImage() {
 }
 
 function clearImage() {
-    imagesDiv.innerHTML = "";
+    // imagesDiv.innerHTML = "";
+    imagesDiv.innerText = "";
 }
 
 window.onload = () => {
