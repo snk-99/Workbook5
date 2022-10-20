@@ -19,5 +19,6 @@ window.onload = () => {
 };
 
 function loadWinningTicketsTable() {
+    const winningTicketsTbl = document.getElementById("winningTicketsTbl");
 
 }
