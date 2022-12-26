@@ -14,17 +14,18 @@ let winningTickets = [
     { tixNum: "8751426", expires: "2020-09-15", prize: 100000 }
 ];
 
-window.onload = () => {
-    loadWinningTicketsTable();
-};
+
 
 function loadWinningTicketsTable() {
-    const winningTicketsTbl = document.getElementById("winningTicketsTbl");
+    const $q = (s) => document.querySelector(s);
+    const winningTicketsTbl = $q("#winningTicketsTbl");
 
-    for (const ticket of winningTickets) {
+    winningTickets.forEach(ticket => {
         buildTicketRow(winningTicketsTbl, ticket);
-    }
+    });
 }
+
+
 
 function buildTicketRow(tableBody, ticket) {
     let row = tableBody.insertRow(-1);
@@ -37,6 +38,8 @@ function buildTicketRow(tableBody, ticket) {
 
     let cell3 = row.insertCell(2);
     cell3.innerText = ticket.expires;
-
-
 }
+
+window.onload = () => {
+    loadWinningTicketsTable();
+};

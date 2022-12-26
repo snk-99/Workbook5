@@ -1,0 +1,3 @@
+GET https://random-words-api.vercel.app/word
+
+# GET https://baconipsum.com/api/?type=all-meat&sentences=1&start-with-lorem=1
